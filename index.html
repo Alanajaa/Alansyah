@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putri Birthday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kamu isi ini</h1>
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama" required>
+            </div>
+            <div class="form-group">
+                <label for="birthday">Tanggal Lahir:</label>
+                <input type="date" id="birthday" name="birthday" required>
+            </div>
+            <div class="form-actions">
+                <button type="button" id="saveButton" class="btn btn-submit">Simpan</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("saveButton").addEventListener("click", function () {
+            const name = document.getElementById("name").value;
+            const birthday = document.getElementById("birthday").value;
+
+            // Validasi input
+            if (name && birthday) {
+                // Simpan data di localStorage (opsional)
+                localStorage.setItem("name", name);
+                localStorage.setItem("birthday", birthday);
+
+                window.location.href = "halaman-berikutnya.html";
+            } else {
+                alert("Harap isi semua bidang formulir!");
+            }
+        });
+    </script>
+</body>
+</html>
